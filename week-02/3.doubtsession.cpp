@@ -5,6 +5,7 @@ int main(int argc, char const *argv[])
     // how to link two files
     /*  
         -> all files must be in same folder to execute it.
+        -> all files are in 3.doubt_session folder in week-02 folder
         -> make 1.cpp file create a function
         -> make 2.cpp file create only till function not to add main function
         -> make a 2.h file(header file) write the code to define the location of 2.cpp function
