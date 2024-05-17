@@ -133,16 +133,16 @@ using namespace std;
 //     }
 // }
 
-// Q12. print all digits of an integer
-void integersAllDigits(int n)
-{
-    while (n > 0)
-    {
-        int digit = n % 10;
-        cout << digit << " ";
-        n /= 10;
-    }
-}
+// // Q12. print all digits of an integer
+// void integersAllDigits(int n)
+// {
+//     while (n > 0)
+//     {
+//         int digit = n % 10;
+//         cout << digit << " ";
+//         n /= 10;
+//     }
+// }
 
 // Q13. create a no using digits
 
@@ -155,6 +155,26 @@ void integersAllDigits(int n)
 // Q17. count all set bit of a number
 
 // Q18. check even odd using bitwise operator
+
+// Q19. reverse integer(leetcode Q7)
+int reverse_int(int n)
+{
+    int ans = 0, rem = 0;
+    bool isNeg = false;
+    if (n < 0)
+    {
+        isNeg = true;
+        n = -n;
+    }
+
+    while (n > 0)
+    {
+        rem = n % 10;
+        ans = ans * 10 + rem;
+        n = n / 10;
+    }
+    return isNeg ? -ans : ans;
+}
 int main()
 {
     // // Q1. add two num
@@ -238,9 +258,9 @@ int main()
     // cin >> n;
     // allPrimes(n);
 
-    // Q12. print all digits of an integer
-    int n = 1245;
-    integersAllDigits(n);
+    // // Q12. print all digits of an integer
+    // int n = 1245;
+    // integersAllDigits(n);
 
     // Q13. create a no using digits
 
@@ -253,6 +273,10 @@ int main()
     // Q17. count all set bit of a number
 
     // Q18. check even odd using bitwise operator
+
+    // Q19. reverse integer(leetcode Q7)
+    int num = reverse_int(-1234);
+    cout << (num) << endl;
 
     return 0;
 }
