@@ -156,25 +156,41 @@ using namespace std;
 
 // Q18. check even odd using bitwise operator
 
-// Q19. reverse integer(leetcode Q7)
-int reverse_int(int n)
-{
-    int ans = 0, rem = 0;
-    bool isNeg = false;
-    if (n < 0)
-    {
-        isNeg = true;
-        n = -n;
-    }
+// // Q19. reverse integer(leetcode Q7)
+// int reverse_int(int n)
+// {
+//     int ans = 0, rem;
+//     bool isNeg = false;
+//     if (n <= INT_MIN)
+//     {
+//         return 0;
+//     }
+//     if (n < 0)
+//     {
+//         isNeg = true;
+//         n = -n;
+//     }
+//     while (n > 0)
+//     {
+//         if (ans > INT_MAX / 10)
+//         {
+//             return 0;
+//         }
+//         rem = n % 10;
+//         ans = ans * 10 + rem;
+//         n /= 10;
+//     }
+//     return isNeg ? -ans : ans;
+// }
 
-    while (n > 0)
-    {
-        rem = n % 10;
-        ans = ans * 10 + rem;
-        n = n / 10;
-    }
-    return isNeg ? -ans : ans;
-}
+// // Q20. set Kth bit(GFG Ques)
+// int setKthBit(int n, int k)
+// {
+//     int mask = 1 << k;
+//     int ans = n | mask;
+//     return ans; 
+// }
+
 int main()
 {
     // // Q1. add two num
@@ -274,9 +290,14 @@ int main()
 
     // Q18. check even odd using bitwise operator
 
-    // Q19. reverse integer(leetcode Q7)
-    int num = reverse_int(-1234);
-    cout << (num) << endl;
+    // // Q19. reverse integer(leetcode Q7)
+    // int num = reverse_int(-123456);
+    // cout << "ans : " << (num) << endl;
+
+    // // Q20. set Kth bit(GFG Ques)
+    // int ans = setKthBit(10, 2);
+    // cout << "ans: " << ans << endl;
+
 
     return 0;
 }
