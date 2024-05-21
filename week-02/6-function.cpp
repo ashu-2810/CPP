@@ -150,7 +150,11 @@ using namespace std;
 
 // Q15. convert Km to Miles
 
-// Q16. convert farhenheit into celcius
+// // Q16. convert farhenheit into celcius(2469. leetcode)
+// float temp(float f)
+// {
+//     return ((f - 32) * (5 / 9));
+// }
 
 // Q17. count all set bit of a number
 
@@ -188,7 +192,7 @@ using namespace std;
 // {
 //     int mask = 1 << k;
 //     int ans = n | mask;
-//     return ans; 
+//     return ans;
 // }
 
 int main()
@@ -284,7 +288,9 @@ int main()
 
     // Q15. convert Km to Miles
 
-    // Q16. convert farhenheit into celcius
+    // // Q16. convert farhenheit into celcius(2469. leetcode)
+    // float f = 32;
+    // cout << "celcius : " << temp(f) << endl;
 
     // Q17. count all set bit of a number
 
@@ -297,7 +303,6 @@ int main()
     // // Q20. set Kth bit(GFG Ques)
     // int ans = setKthBit(10, 2);
     // cout << "ans: " << ans << endl;
-
 
     return 0;
 }
