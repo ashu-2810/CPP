@@ -1,5 +1,5 @@
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
     //     cout << "pentagon" << endl;
     // else
     //     cout << "not triangle" << endl;
-    
+
     // // Q2. find n is +ve, -ve, 0
     // int n = 12;
     // if (n>0)
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
     // {
     //     cout << "0" << endl;
     // }
-    
+
     // // Q3. find n odd even
     // int n = 3;
     // if ((n%2) == 0)
@@ -40,25 +40,25 @@ int main(int argc, char const *argv[])
     // {
     //     cout << "odd" << endl;
     // }
-    
+
     // // Q4. 11 times print name
     // for (int i = 1; i <= 11; i++)
     // {
     //     cout << "Ashu" << endl;
     // }
-    
+
     // // Q5. 19 table
     // for (int i = 1; i <= 10; i++)
     // {
     //     cout << 19 * i << endl;
     // }
-    
+
     // // Q6. 1 -> 100 even no
     // for (int i = 2; i <= 100; i=i+2)
     // {
     //     cout << i << " ";
     // }
-    
+
     // pattern
 
     // // Q7. square pattern
@@ -70,7 +70,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q8. rectangle pattern
     // for (int i = 0; i < 3; i++)
     // {
@@ -80,7 +80,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q9. hollow rectangle
     // for (int row = 0; row < 5; row++)
     // {
@@ -97,7 +97,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q10. half pyramid
     // int n = 5;
     // for (int row = 0; row < n; row++)
@@ -108,7 +108,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q11. inverted half pyramid
     // int n = 5;
     // for (int row = 0; row < n; row++)
@@ -119,7 +119,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q12. numeric half pyramid
     // int n = 5;
     // for (int row = 0; row < n; row++)
@@ -130,7 +130,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q13. inverted numeric half pyramid
     // int n = 5;
     // for (int row = 0; row < n; row++)
@@ -141,21 +141,21 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q14. what happens when you pass cin as parameter
     // int n;
     // if (cin>>n)
     // {
     //     cout << "Ashu" << endl;
     // }
-    
+
     // // Q15. what happens when you pass cout as parameter
     // int n = 10;
     // if (cout<<n)
     // {
     //     cout << "ashu" << endl;
     // }
-    
+
     // // Q16. solid square pattern
     // int n;
     // cin >> n;
@@ -167,7 +167,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q17. hollow square pattern
     // int n;
     // cin >> n;
@@ -186,7 +186,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q18. hollow inverted half pyramid
     // int n;
     // cin >> n;
@@ -205,7 +205,7 @@ int main(int argc, char const *argv[])
     //     }
     //     cout << endl;
     // }
-    
+
     // // Q19. hollow full pyramid
     // int n;
     // cin >> n;
