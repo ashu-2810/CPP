@@ -208,6 +208,35 @@ using namespace std;
 //     return count;
 // }
 
+// // create numbers using digits
+// int create_number(int num){
+//     int ans;
+//     for (int i = 0; i < num; i++)
+//     {
+//         int digit;
+//         cin >> digit;
+//         ans = ans * 10 + digit;
+//     }
+//     return ans;
+// }
+
+// // print all digit of an integer  //ultra important
+// void printAllDigit(int n)
+// {
+//     while (n)
+//     {
+//         int digit = n % 10;
+//         cout << digit << "\t";
+//         n /= 10;
+//     }
+// }
+
+// // convert km into miles
+// float kmToMiles(float km)
+// {
+//     return km * 0.621371;
+// }
+
 int main(int argc, char const *argv[])
 {
 
@@ -293,15 +322,16 @@ int main(int argc, char const *argv[])
     // // count all set bits of a number
     // cout << count_set_bits(15) << endl;
 
-    // print all digit of an integer  //ultra important
+    // // create a number using digits
+    // int num;
+    // cin >> num;
+    // cout << create_number(num) << endl;
 
-    // create a number using digits
+    // // print all digit of an integer  //ultra important
+    // printAllDigit(14329);
 
-    // convert km into miles
-
-    // print binary representation of a decimal no
-
-    // check even odd using bitwise operator
+    // // convert km into miles
+    // cout << kmToMiles(27.10) << " miles " << endl;
 
     return 0;
 }
