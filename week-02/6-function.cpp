@@ -1,75 +1,67 @@
 #include <iostream>
-#include <cmath>
-
 using namespace std;
 
-// // Q1. add two num
-// int addTwoNum(int a, int b)
+// // add two numbers
+// int sum(int num1, int num2)
 // {
-//     return (a + b);
+//     return (num1 + num2);
 // }
 
-// // Q2. write a function to return sum of 3 no.
-// int sumOfThree(int n1, int n2, int n3)
+// // write a function to print sum of three numbers
+// int threeSum(int n1, int n2, int n3)
 // {
 //     return (n1 + n2 + n3);
 // }
 
-// // Q3. write a function to find max of three numbers
-// int MaxInThree(int n1, int n2, int n3)
+// // write a function to print sum of three numbers
+// void threeNumberSum(int n1, int n2, int n3)
 // {
-//     if (n1 > n2 && n1 > n3)
+//     cout << "sum of three no is : " << n1 + n2 + n3 << endl;
+// }
+
+// // find max of three numbers
+// int maxOfThreeNumbers(int n1, int n2, int n3)
+// {
+//     int ans1 = max(n1, n2);
+//     int ans2 = max(ans1, n3);
+//     return ans2;
+// }
+
+// // counting from 1 to n
+// void counting_1_to_N(int number)
+// {
+//     for (int i = 1; i <= number; i++)
 //     {
-//         return n1;
+//         cout << i << "\t";
 //     }
-//     else if (n2 > n1 && n2 > n3)
+// }
+
+// // check even or odd
+// void check_even_odd(int n)
+// {
+//     if (n % 2 == 0)
 //     {
-//         return n2;
+//         cout << "modulo even" << endl;
 //     }
 //     else
 //     {
-//         return n3;
+//         cout << "modulo odd" << endl;
 //     }
 // }
-// or you can use an inbuilt function max it takes only two parameters
-
-// // Q4. print counting from 1 to n
-// void printCounting(int n)
+// void bitwise_even_odd(int n)
 // {
-//     for (int i = 0; i < n; i++)
+//     if ((n & 1) == 0)
 //     {
-//         cout << i + 1 << endl;
+//         cout << "bitwise even" << endl;
+//     }
+//     else
+//     {
+//         cout << "bitwise Odd" << endl;
 //     }
 // }
 
-// // Q5. check prime or not
-// int checkPrime(int n)
-// {
-//     int flag = 0;
-//     for (int i = 2; i < n; i++)
-//     {
-//         if (n % i == 0)
-//         {
-//             flag += 1;
-//         }
-//     }
-//     return flag;
-// }
-
-// // Q6. check even or odd
-// int checkEvenOdd(int n)
-// {
-//     int flag = 0;
-//     // if (n % 2 == 0) // using modulo operator
-//     if ((n & 1) == 0) // using bitwise operator
-//     {
-//         flag = 1;
-//     }
-//     return flag;
-// }
-
-// // Q7. sum of all no upto 1->n
-// int allSum(int n)
+// // sum of all numbers from 1 to n
+// int sum_Till_n(int n)
 // {
 //     int sum = 0;
 //     for (int i = 0; i <= n; i++)
@@ -79,230 +71,237 @@ using namespace std;
 //     return sum;
 // }
 
-// // Q8. sum of all even no upto 1->n
-// int evenSum(int n)
+// // sum of all even numbers from 1 to n
+// int calculate_even_sum(int num)
 // {
 //     int sum = 0;
-//     for (int i = 0; i < n + 1; i += 2)
+//     for (int i = 0; i <= num; i++)
 //     {
-//         sum += i;
+//         if ((i & 1) == 0)
+//         {
+//             sum += i;
+//         }
 //     }
 //     return sum;
 // }
 
-// HW
-
-// // Q9. function to area of circle
-// double areaOfCircle(int r){
-//     return (3.14*r*r);
+// // check prime or not
+// bool check_prime(int n)
+// {
+//     for (int i = 2; i < n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             return false;
+//         }
+//     }
+//     return true;
 // }
 
-// // Q10. function to find factorial of a no
-// int factorial(int n)
+// HW
+
+// // function to display area of circle
+// float area_of_circle(float r)
 // {
-//     int fact = 1;
-//     for (int i = 1; i < n + 1; i++)
+//     return (3.14 * r * r);
+// }
+
+// // fuction to find factorial
+// long long int factorial(long long int n)
+// {
+//     long long int fact = 1;
+//     for (int i = 1; i <= n; i++)
 //     {
 //         fact *= i;
 //     }
 //     return fact;
 // }
 
-// // Q11. print all prime no from 1->n
-// int checkPrime(int n)
+// // check prime or not using sqrt in-built function
+// #include <cmath>
+// bool check(int n)
 // {
-//     int flag = 0;
-//     for (int i = 2; i < n; i++)
+//     for (int i = 2; i <= sqrt(n); i++)
 //     {
 //         if (n % i == 0)
 //         {
-//             flag = 1;
+//             return false;
 //         }
 //     }
-//     return flag;
+//     return true;
 // }
-// void allPrimes(int n)
+
+// // print all prime numbers from 1 to n
+// #include <cmath>
+// bool check_prime(int n)
 // {
-//     for (int i = 0; i < n + 1; i++)
+//     for (int i = 2; i <= sqrt(n); i++)
 //     {
-//         int prime = checkPrime(i);
-//         if (prime == 0)
+//         if (n % i == 0)
 //         {
-//             cout << i << " ";
+//             return false;
 //         }
 //     }
+//     return true;
 // }
 
-// // Q12. print all digits of an integer
-// void integersAllDigits(int n)
+// // reverse integer(7.leetcode)
+// int reverse(int x)
 // {
-//     while (n > 0)
-//     {
-//         int digit = n % 10;
-//         cout << digit << " ";
-//         n /= 10;
-//     }
-// }
-
-// Q13. create a no using digits
-
-// Q14. print binary representation of a decimal no
-
-// Q15. convert Km to Miles
-
-// // Q16. convert farhenheit into celcius(2469. leetcode)
-// float temp(float f)
-// {
-//     return ((f - 32) * (5 / 9));
-// }
-
-// Q17. count all set bit of a number
-
-// Q18. check even odd using bitwise operator
-
-// // Q19. reverse integer(leetcode Q7)
-// int reverse_int(int n)
-// {
-//     int ans = 0, rem;
+//     int ans = 0;
 //     bool isNeg = false;
-//     if (n <= INT_MIN)
+//     if (x <= INT_MIN)
 //     {
 //         return 0;
 //     }
-//     if (n < 0)
+//     if (x < 0)
 //     {
 //         isNeg = true;
-//         n = -n;
+//         x = -x;
 //     }
-//     while (n > 0)
+//     while (x > 0)
 //     {
 //         if (ans > INT_MAX / 10)
 //         {
 //             return 0;
 //         }
-//         rem = n % 10;
-//         ans = ans * 10 + rem;
-//         n /= 10;
+//         int digit = x % 10;
+//         ans = ans * 10 + digit;
+//         x /= 10;
 //     }
 //     return isNeg ? -ans : ans;
 // }
 
-// // Q20. set Kth bit(GFG Ques)
-// int setKthBit(int n, int k)
+// // set the kth bit
+// int kth_bit(int k, int n)
 // {
 //     int mask = 1 << k;
-//     int ans = n | mask;
+//     int ans = (n | mask);
 //     return ans;
 // }
 
-int main()
+// // convert celcius into kelvin and fahrenheit
+// #include <vector>
+// vector<double> convertTemp(double c)
+// {
+//     double k = c + 273.15;
+//     double f = c * 1.80 + 32;
+//     vector<double> v;
+//     v.push_back(k);
+//     v.push_back(f);
+//     return v;
+// }
+
+// // count all set bits
+// int count_set_bits(int num)
+// {
+//     int count = 0;
+//     while (num > 0)
+//     {
+//         int digit = num & 1;
+//         if (digit == 1)
+//         {
+//             count++;
+//         }
+//         num = num >> 1;
+//     }
+//     return count;
+// }
+
+int main(int argc, char const *argv[])
 {
-    // // Q1. add two num
-    // int num1 = 5, num2 = 6;
-    // int result = addTwoNum(num1, num2);
-    // cout << "result : " << result << endl;
 
-    // // Q2. write a function to return sum of 3 no.
-    // int n1 = 5, n2 = 4, n3 = 1;
-    // cout << "sum of three numbers is : " << sumOfThree(n1, n2, n3) << endl;
+    // // add two numbers
+    // int num1, num2;
+    // cin >> num1;
+    // cin >> num2;
+    // cout << "sum is : " << sum(num1, num2) << endl;
 
-    // // Q3.write a function to find max of three numbers
-    // int n1 = 5, n2 = 9, n3 = 1;
-    // cout << "max in " << n1 << ", " << n2 << ", " << n3 << " is : " << MaxInThree(n1, n2, n3) << endl;
+    // // write a function to return sum of three numbers
+    // int n1, n2, n3;
+    // cin >> n1 >> n2 >> n3;
+    // cout << threeSum(n1, n2, n3);
 
-    // // Q4. print counting from 1 to n
-    // int n;
-    // cin >> n;
-    // printCounting(n);
+    // // write a function to print sum of three numbers
+    // threeNumberSum(4, 4, 2);
 
-    // // Q5. check prime or not
-    // int n, flag;
-    // cout << "Enter the no to check if it is prime or not : ";
-    // cin >> n;
-    // flag = checkPrime(n);
-    // if (flag == 0)
+    // // find max of three numbers
+    // cout << "max is : " << maxOfThreeNumbers(4, 3, 5);
+
+    // // counting from 1 to n
+    // counting_1_to_N(10);
+
+    // // check even or odd
+    // check_even_odd(10);
+    // bitwise_even_odd(8);
+
+    // // sum of all numbers from 1 to n
+    // cout << "sum till n : " << sum_Till_n(10) << endl;
+
+    // // sum of all enven numbers from 1 to n
+    // cout << calculate_even_sum(10) << endl;
+
+    // // check prime or not
+    // bool ans = check_prime(11);
+    // if (ans)
     // {
-    //     cout << "it is a prime no." << endl;
+    //     cout << "prime" << endl;
     // }
     // else
     // {
-    //     cout << "it is not a prime no." << endl;
+    //     cout << "not prime" << endl;
     // }
 
-    // // Q6. check even or odd
-    // int n, flag;
-    // cout << "enter no to check even or odd : ";
-    // cin >> n;
-    // flag = checkEvenOdd(n);
-    // if (flag == 0)
+    //  HW
+
+    // // find the area of circle
+    // float area = 5.323;
+    // cout << area_of_circle(area) << endl;
+
+    // // find factorial of a number
+    // cout << factorial(12) << endl;
+
+    // // check prime or not
+    // cout << "0- not prime 1- prime : " << check(17) << endl;
+
+    // // print all prime numbers from 1 to n
+    // int n = 45;
+    // for (int i = 2; i <= n; i++)
     // {
-    //     cout << "no is odd" << endl;
+    //     bool isprime = check_prime(i);
+    //     if (isprime)
+    //     {
+    //         cout << i << "\t";
+    //     }
     // }
-    // else
+
+    // // reverse integer(7.leetcode)
+    // cout << reverse(-321) << endl;
+
+    // // set the kth bit
+    // cout << kth_bit(2, 10);
+
+    // // convert celcius into kelvin and fahrenheit
+    // vector<double> vv;
+    // double c = 36.50;
+    // vv = convertTemp(c);
+    // for (int i = 0; i < vv.size(); i++)
     // {
-    //     cout << "no is even" << endl;
+    //     cout << vv[i] << "\t";
     // }
 
-    // // Q7. sum of all no upto 1->n
-    // int n, sum;
-    // cout << "enter no to sum upto n : ";
-    // cin >> n;
-    // sum = allSum(n);
-    // cout << "sum of no upto " << n << " is : " << sum << endl;
+    // // count all set bits of a number
+    // cout << count_set_bits(15) << endl;
 
-    // // Q8. sum of all even no upto 1->n
-    // int n, sum;
-    // cout << "Enter no to get sum upto entered no : ";
-    // cin >> n;
-    // sum = evenSum(n);
-    // cout << "sum : " << sum;
+    // print all digit of an integer  //ultra important
 
-    // HW
+    // create a number using digits
 
-    // // Q9. function to area of circle
-    // float r;
-    // cout<<"enter radius to get the area of circle : ";
-    // cin>>r;
-    // double area = areaOfCircle(r);
-    // cout<<"area of circle is : "<<area;
+    // convert km into miles
 
-    // // Q10. function to find factorial of a no
-    // int n;
-    // cout << "Enter the no to find the factorial : ";
-    // cin >> n;
-    // cout << "factorial of " << n << " is : " << factorial(n) << endl;
+    // print binary representation of a decimal no
 
-    // // Q11. print all prime no from 1->n
-    // int n;
-    // cout << "Enter no to print all prime upto n : ";
-    // cin >> n;
-    // allPrimes(n);
-
-    // // Q12. print all digits of an integer
-    // int n = 1245;
-    // integersAllDigits(n);
-
-    // Q13. create a no using digits
-
-    // Q14. print binary representation of a decimal no
-
-    // Q15. convert Km to Miles
-
-    // // Q16. convert farhenheit into celcius(2469. leetcode)
-    // float f = 32;
-    // cout << "celcius : " << temp(f) << endl;
-
-    // Q17. count all set bit of a number
-
-    // Q18. check even odd using bitwise operator
-
-    // // Q19. reverse integer(leetcode Q7)
-    // int num = reverse_int(-123456);
-    // cout << "ans : " << (num) << endl;
-
-    // // Q20. set Kth bit(GFG Ques)
-    // int ans = setKthBit(10, 2);
-    // cout << "ans: " << ans << endl;
+    // check even odd using bitwise operator
 
     return 0;
 }
