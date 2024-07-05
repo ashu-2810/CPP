@@ -13,9 +13,9 @@ int checkMember(int n)
     {
         while (1)
         {
-            int temp = f1 + f2;
-            f1 = f2;
-            f2 = temp;
+            int temp = f1 + f2;//2-3-5-8-13
+            f1 = f2;//1-2-3-5-8
+            f2 = temp;//2-3-5-8-13
             if (temp == n)
             {
                 return true;
@@ -29,6 +29,6 @@ int checkMember(int n)
 }
 int main(int argc, char const *argv[])
 {
-    cout << checkMember(233) << endl;
+    cout << checkMember(10) << endl;
     return 0;
 }
