@@ -117,6 +117,61 @@ using namespace std;
 //     return maxAns;
 // }
 
+// // reverse array using temp variable
+// void reverseArray(int arr[], int size)
+// {
+//     int left = 0;
+//     int right = size - 1;
+//     int temp = 0;
+//     while (left <= right)
+//     {
+//         temp = arr[left];
+//         arr[left] = arr[right];
+//         arr[right] = temp;
+//         left++, right--;
+//     }
+//     for (int i = 0; i < size; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+
+// // reverse array using xor operator
+// void reverseArray(int arr[], int size)
+// {
+//     int left = 0;
+//     int right = size - 1;
+//     while (left <= right)
+//     {
+//         arr[left] ^= arr[right];
+//         arr[right] ^= arr[left];
+//         arr[left] ^= arr[right];
+//         left++, right--;
+//     }
+//     for (int i = 0; i < size; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+
+// // reverse array using + - operator
+// void reverseArray(int arr[], int size)
+// {
+//     int left = 0;
+//     int right = size - 1;
+//     while (left <= right)
+//     {
+//         arr[left] = arr[left] + arr[right];
+//         arr[right] = arr[left] - arr[right];
+//         arr[left] = arr[left] - arr[right];
+//         left++, right--;
+//     }
+//     for (int i = 0; i < size; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+
 int main(int argc, char const *argv[])
 {
     // // 10 size array, take input in array, double-up each value of that array
@@ -213,6 +268,21 @@ int main(int argc, char const *argv[])
     // int arr[] = {2, 10, 22, 13, 5, 3, 7, 60, 31};
     // int size = 9;
     // cout << maxInArray(arr, size) << endl;
+
+    // // reverse array using temp variable
+    // int arr[] = {10, 20, 30, 40, 50, 60};
+    // int size = 6;
+    // reverseArray(arr, size);
+
+    // // reverse array using xor operator
+    // int arr[] = {10, 20, 30, 40, 50, 60};
+    // int size = 6;
+    // reverseArray(arr, size);
+
+    // // reverse array using + - operator
+    // int arr[] = {10, 20, 30, 40, 50, 60};
+    // int size = 6;
+    // reverseArray(arr, size);
 
     return 0;
 }
