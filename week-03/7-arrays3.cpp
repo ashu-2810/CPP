@@ -29,7 +29,7 @@ using namespace std;
 //     }
 // }
 
-// // taking input in 2D array
+// // printing after taking input in 2D array
 // void printarr2(int arr2[][3], int arr2row, int arr2col)
 // {
 //     for (int i = 0; i < arr2row; i++)
