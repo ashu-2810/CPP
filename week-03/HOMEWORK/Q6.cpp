@@ -1,10 +1,10 @@
 // find duplicate numbers(287. leetcode)
 #include <iostream>
-#include <algorithm>
 #include <vector>
 using namespace std;
 
-// in-built sort method
+// in-built sort method TC- O(n logn)  SC- O(n)
+#include <algorithm>
 int Duplicate(vector<int> &nums)
 {
     sort(nums.begin(), nums.end());
@@ -37,7 +37,7 @@ int findDuplicate(vector<int> &nums)
 
 // ------------------------------OR-----------------------
 
-// positioning method
+// positioning method TC- O(n)  SC-O(1)
 int pleaseFindDuplicate(vector<int> &nums)
 {
     while (nums[0] != nums[nums[0]])
