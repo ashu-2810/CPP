@@ -26,12 +26,38 @@ void missing(vector<int> &nums)
 // ------------------------------------OR-----------------------
 
 // sorting and swaping method
+void missings(vector<int> &nums)
+{
+    int n = nums.size();
+    int i = 0;
+    while (i < n)
+    {
+        int index = nums[i] - 1;
+        if (nums[i] != nums[index])
+        {
+            swap(nums[i], nums[index]);
+        }
+        else
+        {
+            i++;
+        }
+    }
 
+    for (int i = 0; i < n; i++)
+    {
+        if (nums[i] != i + 1)
+        {
+            cout << i + 1 << " ";
+        }
+    }
+    cout << endl;
+}
 
 int main()
 {
     vector<int> nums = {1, 3, 5, 3, 4};
-    missing(nums);
+    // missing(nums);
+    missings(nums);
 
     return 0;
 }
