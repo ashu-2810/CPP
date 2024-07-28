@@ -51,6 +51,7 @@ string calSum(int *a, int n, int *b, int m)
 
 vector<int> factorial(int nfact)
 {
+    
 }
 
 int main()
