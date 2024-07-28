@@ -87,7 +87,7 @@ int main()
     cout << endl;
 
     // factorial of a number
-    int nfact = 5;
+    int nfact = 7;
     vector<int> result = factorial(nfact);
     for (int i = 0; i < result.size(); i++)
     {
