@@ -40,11 +40,11 @@ int binarySearch(vector<int> &brr1, int targets)
 }
 
 // find first occurance in an array using binary search
-int firstOccurance(vector<int> &arr, int targett)
+int firstOccurance(vector<int> arr, int targett)
 {
     int s = 0;
     int e = arr.size() - 1;
-    int mid = (s + e) / 2;
+    int mid = s + (e - s) / 2;
     int ans = -1;
     while (s <= e)
     {
@@ -61,11 +61,74 @@ int firstOccurance(vector<int> &arr, int targett)
         {
             e = mid - 1;
         }
-        mid = (s + e) / 2;
+        mid = s + (e - s) / 2;
     }
     return ans;
 }
 
+// find last occurance of a number in a sorted array
+int lastOccurance(vector<int> arr2, int targeet)
+{
+    int s = 0, e = arr2.size() - 1;
+    int mid = s + (e - s) / 2;
+    int ans = -1;
+    while (s <= e)
+    {
+        if (arr2[mid] == targeet)
+        {
+            ans = mid;
+            s = mid + 1;
+        }
+        else if (arr2[mid] < targeet)
+        {
+            s = mid + 1;
+        }
+        else if (arr2[mid] > targeet)
+        {
+            e = mid - 1;
+        }
+        mid = s + (e - s) / 2;
+    }
+    return ans;
+}
+
+// total occurance of a number in an array
+int totalOccurance(vector<int> totalOcc, int ttargets)
+{
+    int first = firstOccurance(totalOcc, ttargets);
+    int last = lastOccurance(totalOcc, ttargets);
+    int ans = last - first + 1;
+    return ans;
+}
+
+// find the missing elements in an array
+int findmissingElement(vector<int> missing)
+{
+    int n = missing.size();
+    int ans = -1;
+    int i = 0;
+    int j = n - 1;
+    int mid = i + (j - i) / 2;
+    while (i <= j)
+    {
+        int diff = missing[mid] - mid;
+        if (diff == 1)
+        {
+            i = mid + 1;
+        }
+        else
+        {
+            ans = mid;
+            j = mid - 1;
+        }
+        mid = i + (j - i) / 2;
+    }
+    if (ans + 1 == 0)
+    {
+        return n + 1;
+    }
+    return ans + 1;
+}
 int main()
 {
     // linear search
@@ -87,5 +150,18 @@ int main()
     int targett = 30;
     cout << "first occurance of target at index is: " << firstOccurance(arr, targett) << endl;
 
+    // find last occurance of a number in a sorted array
+    vector<int> arr2 = {10, 20, 30, 30, 30, 30, 40, 50, 60};
+    int targeet = 30;
+    cout << "index of targeet of last occurance is: " << lastOccurance(arr2, targeet) << endl;
+
+    // total occurance of a number in a sorted array
+    vector<int> totalOcc = {10, 20, 30, 30, 30, 30, 40, 50, 60};
+    int ttargets = 30;
+    cout << "total occurance is: " << totalOccurance(totalOcc, ttargets) << endl;
+
+    // find the missing elements in an array
+    vector<int> missing{1, 2, 3, 4, 5, 6, 7, 8};
+    cout << "missing element is: " << findmissingElement(missing) << endl;
     return 0;
 }
