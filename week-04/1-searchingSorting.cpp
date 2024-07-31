@@ -123,12 +123,38 @@ int findmissingElement(vector<int> missing)
         }
         mid = i + (j - i) / 2;
     }
+    // how cna we remove this, by modifiying the above logic
     if (ans + 1 == 0)
     {
         return n + 1;
     }
     return ans + 1;
 }
+
+// peak index in a mountain array(852.leetcode)
+int peakMountain(vector<int> &peak)
+{
+    int n = peak.size();
+    int s = 0;
+    int e = n - 1;
+    int mid = s + (e - s) / 2;
+    int ans = -1;
+    while (s < e)
+    {
+        if (peak[mid] < peak[mid + 1])
+        {
+            s = mid + 1;
+        }
+        else
+        {
+            ans = mid;
+            e = mid;
+        }
+        mid = s + (e - s) / 2;
+    }
+    return ans;
+}
+
 int main()
 {
     // linear search
@@ -163,5 +189,10 @@ int main()
     // find the missing elements in an array
     vector<int> missing{1, 2, 3, 4, 5, 6, 7, 8};
     cout << "missing element is: " << findmissingElement(missing) << endl;
+
+    // peak index in a mountain array(852.leetcode)
+    vector<int> peak = {10, 20, 50, 40, 30};
+    cout << "peak index in mountain array: " << peakMountain(peak) << endl;
+
     return 0;
 }
