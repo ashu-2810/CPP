@@ -107,7 +107,47 @@ using namespace std;
 //     return ans;
 // }
 
-// rearrange array elements by sign(2149. leetcode) (H.W.)
+// // rearrange array elements by sign(2149. leetcode) (H.W.)
+// vector<int> rearrangeArray(vector<int> &nums)
+// {
+//     // // method-1 (temp array)
+//     // vector<int> pos, neg, ans;
+//     // int n = nums.size();
+//     // for (int i = 0; i < n; i++)
+//     // {
+//     //     if (nums[i] > 0)
+//     //     {
+//     //         pos.push_back(nums[i]);
+//     //     }
+//     //     else
+//     //     {
+//     //         neg.push_back(nums[i]);
+//     //     }
+//     // }
+//     // for (int i = 0; i < n / 2; i++)
+//     // {
+//     //     ans.push_back(pos[i]);
+//     //     ans.push_back(neg[i]);
+//     // }
+//     // return ans;
+//     // method 2 (2 pointer)
+//     vector<int> ans(nums.size(), -1);
+//     int odd = 1, even = 0;
+//     for (int i = 0; i < nums.size(); i++)
+//     {
+//         if (nums[i] > 0)
+//         {
+//             ans[even] = nums[i];
+//             even += 2;
+//         }
+//         else
+//         {
+//             ans[odd] = nums[i];
+//             odd += 2;
+//         }
+//     }
+//     return ans; 
+// }
 
 // // row with maximum ones(2643. leetcode)
 // vector<int> rowAndMaxOnes(vector<vector<int>> &mat)
@@ -182,7 +222,14 @@ int main()
     // int missingNum = missingNumber(nums);
     // cout << "missing number in array is: " << missingNum << endl;
 
-    // rearrange array elements by sign(2149. leetcode) (H.W.)
+    // // rearrange array elements by sign(2149. leetcode) (H.W.)
+    // vector<int> nums = {3, 1, -2, -5, 2, -4};
+    // vector<int> result = rearrangeArray(nums);
+    // for (int i = 0; i < result.size(); i++)
+    // {
+    //     cout << result[i] << " ";
+    // }
+    // cout << endl;
 
     // // row with maximum ones(2643. leetcode)
     // vector<vector<int>> mat;
