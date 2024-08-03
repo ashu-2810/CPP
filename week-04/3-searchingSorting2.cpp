@@ -49,7 +49,6 @@ int pivotElement(vector<int> &arr)
     }
     return -1;
 }
-
 int binarySearch(vector<int> arr, int s, int e, int target)
 {
     int mid = s + (e - s) / 2;
@@ -65,7 +64,6 @@ int binarySearch(vector<int> arr, int s, int e, int target)
     }
     return -1;
 }
-
 int search(vector<int> arr, int target)
 {
     int n = arr.size();
@@ -78,6 +76,7 @@ int search(vector<int> arr, int target)
     return ans;
 }
 
+//
 int main()
 {
     // find pivot element( pivot can me the maximum element or minimum element based on requirement)
@@ -86,12 +85,10 @@ int main()
     cout << "pivot index: " << pivot(nums) << endl;
 
     // search in sorted and rotated array (33. leetcode)
-    vector<int> arr = {12, 14, 16, 2, 4, 6, 8, 10};
-    // vector<int> arr = {1, 3};
-    int target = 10;
-    cout << "pivot: " << pivotElement(arr) << endl;
-    cout << "binarysearch: " << binarySearch(arr, 0, 1, target) << endl;
-    cout << search(arr, target) << endl;
+    // vector<int> arr = {12, 14, 16, 2, 4, 6, 8, 10};
+    vector<int> arr = {1, 3};
+    int target = 3;
+    cout << "search in sorted and rotated array: " << search(arr, target) << endl;
 
     return 0;
 }
