@@ -99,7 +99,35 @@ int mySqrt(int x)
     return ans;
 }
 
-// 
+// sqrt (upto 3 decimal number ans)
+
+// search in a 2D matrix (74. leetcode)
+bool searchMatrix(vector<vector<int>> &matrix, int targget)
+{
+    int row = matrix.size();
+    int col = matrix[0].size();
+    int totalElements = row * col;
+    int s = 0;
+    int e = totalElements - 1;
+    int mid = s + (e - s) / 2;
+    while (s <= e)
+    {
+        int rowIndex = mid / col;                    // imp 1D -> 2D
+        int colIndex = mid % col;                    // imp 1D -> 2D
+        int currNumber = matrix[rowIndex][colIndex]; // imp 1D -> 2D
+        if (currNumber == targget)
+            return true;
+        else if (targget > currNumber)
+            s = mid + 1;
+        else
+            e = mid - 1;
+        mid = s + (e - s) / 2;
+    }
+    return false;
+}
+
+//
+
 int main()
 {
     // find pivot element( pivot can me the maximum element or minimum element based on requirement)
@@ -114,8 +142,13 @@ int main()
     cout << "search in sorted and rotated array: " << search(arr, target) << endl;
 
     // sqrt (69.leetcode)
-    int x = 8;
+    int x = 68;
     cout << "sqrt of " << x << " is: " << mySqrt(x) << endl;
+
+    // search in a 2D matrix (74. leetcode)
+    vector<vector<int>> matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
+    int targget = 11;
+    cout << searchMatrix(matrix, targget) << endl;
 
     return 0;
 }
