@@ -126,8 +126,6 @@ bool searchMatrix(vector<vector<int>> &matrix, int targget)
     return false;
 }
 
-//
-
 int main()
 {
     // find pivot element( pivot can me the maximum element or minimum element based on requirement)
@@ -144,6 +142,8 @@ int main()
     // sqrt (69.leetcode)
     int x = 68;
     cout << "sqrt of " << x << " is: " << mySqrt(x) << endl;
+
+    // sqrt (upto 3 decimal number ans)
 
     // search in a 2D matrix (74. leetcode)
     vector<vector<int>> matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
