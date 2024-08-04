@@ -76,7 +76,30 @@ int search(vector<int> arr, int target)
     return ans;
 }
 
-//
+// sqrt (69.leetcode)
+int mySqrt(int x)
+{
+    int s = 0;
+    int e = x;
+    long long int mid = s + (e - s) / 2;
+    int ans = -1;
+    while (s <= e)
+    {
+        if (mid * mid == x)
+            return mid;
+        else if (mid * mid < x)
+        {
+            ans = mid;
+            s = mid + 1;
+        }
+        else if (mid * mid > x)
+            e = mid - 1;
+        mid = s + (e - s) / 2;
+    }
+    return ans;
+}
+
+// 
 int main()
 {
     // find pivot element( pivot can me the maximum element or minimum element based on requirement)
@@ -89,6 +112,10 @@ int main()
     vector<int> arr = {1, 3};
     int target = 3;
     cout << "search in sorted and rotated array: " << search(arr, target) << endl;
+
+    // sqrt (69.leetcode)
+    int x = 8;
+    cout << "sqrt of " << x << " is: " << mySqrt(x) << endl;
 
     return 0;
 }
