@@ -34,9 +34,7 @@ int main()
     int dividend = 39;
     int ans = divide(abs(dividend), abs(divisor));
     if (divisor == 0 && (dividend > 0 || dividend < 0))
-    {
         ans = -1;
-    }
     else if (dividend == 0 && (divisor > 0 || divisor < 0))
         ans = 0;
     else if (divisor > 0 && dividend < 0 || divisor < 0 && dividend > 0)
