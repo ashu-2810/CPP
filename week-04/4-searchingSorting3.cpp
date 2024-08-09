@@ -51,6 +51,9 @@ int searchNearlySorted(vector<int> arr, int target)
     return -1;
 }
 
+// find the odd occuring element
+
+
 int main()
 {
     // divide two numbers using binarySearch
