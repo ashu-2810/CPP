@@ -19,15 +19,13 @@ int divide(int dividend, int divisor)
             s = mid + 1;
         }
         else
-        {
             e = mid - 1;
-        }
         mid = s + (e - s) / 2;
     }
     return ans;
 }
 
-// nearly sorted array
+// search in nearly sorted array
 int searchNearlySorted(vector<int> arr, int target)
 {
     int n = arr.size();
@@ -52,7 +50,11 @@ int searchNearlySorted(vector<int> arr, int target)
 }
 
 // find the odd occuring element
-
+int oddOccuringElement(vector<int> &nums)
+{
+    
+    return -1;
+}
 
 int main()
 {
@@ -72,6 +74,10 @@ int main()
     vector<int> arr = {20, 10, 30, 50, 40, 70, 60};
     int target = 70;
     cout << searchNearlySorted(arr, target) << endl;
+
+    // find the odd occuring element
+    vector<int> nums = {1, 1, 3, 3, 5, 5, 7, 7, 7};
+    cout << oddOccuringElement(nums) << endl;
 
     return 0;
 }
