@@ -52,7 +52,30 @@ int searchNearlySorted(vector<int> arr, int target)
 // find the odd occuring element
 int oddOccuringElement(vector<int> &nums)
 {
-    
+    int n = nums.size();
+    int s = 0;
+    int e = n - 1;
+    int mid = s + (e - s) / 2;
+    while (s <= e)
+    {
+        if (s == e)
+            return s;
+        if ((mid & 1) == 0)
+        {
+            if (mid + 1 < n && nums[mid] == nums[mid + 1])
+                s = mid + 2;
+            else
+                e = mid;
+        }
+        else if ((mid & 1) == 1)
+        {
+            if (mid - 1 >= 0 && nums[mid] == nums[mid - 1])
+                s = mid + 1;
+            else
+                e = mid - 1;
+        }
+        mid = s + (e - s) / 2;
+    }
     return -1;
 }
 
@@ -76,7 +99,7 @@ int main()
     cout << searchNearlySorted(arr, target) << endl;
 
     // find the odd occuring element
-    vector<int> nums = {1, 1, 3, 3, 5, 5, 7, 7, 7};
+    vector<int> nums = {1, 1, 3, 3, 2, 5, 5, 2, 2, 7, 7};
     cout << oddOccuringElement(nums) << endl;
 
     return 0;
