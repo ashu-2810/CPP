@@ -23,12 +23,60 @@ using namespace std;
 //     return anss;
 // }
 
-// method 02
-vector<int> findColsest(vector<int> arr, int k, int x)
+// // method 02 (two pointer approach )
+// vector<int> findColsest(vector<int> arr, int k, int x)
+// {
+//     int l = 0;
+//     int h = arr.size() - 1;
+//     while (h - l >= k)
+//     {
+//         if (x - arr[l] > arr[h] - x)
+//             l++;
+//         else
+//             h--;
+//     }
+//     // vector<int> ans;
+//     // for (int i = l; i <= h; i++)
+//     //     ans.push_back(arr[i]);
+//     // return ans;
+//     // ----------------------OR-----------------------------
+//     return vector<int>(arr.begin() + l, arr.begin() + h + 1);
+// }
+
+// method 03 (binary search)
+int lowerBound(vector<int> &arr, int x)
 {
-    vector<int> ans;
+    int n = arr.size();
+    int s = 0, end = n - 1, ans = -1;
+    int mid = s + (end - s) / 2;
+    while (s <= end)
+    {
+        if (arr[mid] >= x)
+        {
+            ans = mid;
+            end = mid - 1;
+        }
+        else if (x > arr[mid])
+            s = mid + 1;
+        else
+            mid - 1;
+    }
     return ans;
 }
+vector<int> findColsest(vector<int> &arr, int k, int x)
+{
+    int h = lowerBound(arr, x);
+    int l = h - 1;
+    while (k--)
+    {
+        if (arr[l] - x > arr[h] - x)
+            h++;
+        else
+            l--;
+    }
+    return vector<int>(arr.begin() + l + 1, arr.begin() + h);
+}
+
 int main()
 {
     // find k colsest element(658. leetcode)
@@ -43,7 +91,17 @@ int main()
     //     cout << ans[i] << " ";
     // }
 
-    // method 02
+    // // method 02 (two pointer approch)
+    // vector<int> arr = {1, 2, 3, 4, 5};
+    // int k = 4;
+    // int x = 3;
+    // vector<int> ans = findColsest(arr, k, x);
+    // for (int i = 0; i < ans.size(); i++)
+    // {
+    //     cout << ans[i] << " ";
+    // }
+
+    // method 03( binary search)
     vector<int> arr = {1, 2, 3, 4, 5};
     int k = 4;
     int x = 3;
@@ -52,5 +110,6 @@ int main()
     {
         cout << ans[i] << " ";
     }
+
     return 0;
 }
