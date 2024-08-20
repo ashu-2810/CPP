@@ -47,10 +47,10 @@ using namespace std;
 int lowerBound(vector<int> &arr, int x)
 {
     int n = arr.size();
-    int s = 0, end = n - 1, ans = -1;
-    int mid = s + (end - s) / 2;
+    int s = 0, end = n - 1, ans = end;
     while (s <= end)
     {
+        int mid = s + (end - s) / 2;
         if (arr[mid] >= x)
         {
             ans = mid;
@@ -59,7 +59,7 @@ int lowerBound(vector<int> &arr, int x)
         else if (x > arr[mid])
             s = mid + 1;
         else
-            mid - 1;
+            end = mid - 1;
     }
     return ans;
 }
@@ -69,7 +69,11 @@ vector<int> findColsest(vector<int> &arr, int k, int x)
     int l = h - 1;
     while (k--)
     {
-        if (arr[l] - x > arr[h] - x)
+        if (l < 0)
+            h++;
+        else if (h >= arr.size())
+            l--;
+        else if (x - arr[l] > arr[h] - x)
             h++;
         else
             l--;
@@ -103,8 +107,11 @@ int main()
 
     // method 03( binary search)
     vector<int> arr = {1, 2, 3, 4, 5};
+    // vector<int> arr = {3, 5, 8, 10};
     int k = 4;
+    // int k = 2;
     int x = 3;
+    // int x = 15;
     vector<int> ans = findColsest(arr, k, x);
     for (int i = 0; i < ans.size(); i++)
     {
