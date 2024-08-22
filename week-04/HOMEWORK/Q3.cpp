@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 
+// binary search
 int bs(vector<int> &arr, int s, int e, int x)
 {
     while (s <= e)
