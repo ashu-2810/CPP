@@ -4,35 +4,41 @@
 #include <numeric> // used for accumulate stl function
 using namespace std;
 
-bool possible(vector<int> &v, int n, int m, int sol)
+bool possible(int v[], int n, int m, int sol)
 {
     int pageSum = 0;
     int c = 1;
     for (int i = 0; i < n; i++)
     {
         if (v[i] > sol)
+        {
             return false;
+        }
         else if (pageSum + v[i] > sol)
         {
             c++;
             pageSum += v[i];
             if (c > m)
+            {
                 return false;
+            }
         }
         else
+        {
             pageSum += v[i];
+        }
     }
     return true;
 }
 
-int findPages(vector<int> &v, int n, int m)
+int findPages(int v[], int n, int m)
 {
     if (m > n)
+    {
         return -1;
+    }
     int s = 0;
-    // int e = v.size();
-    // int e = accumulate(v.begin(), v.end(), 0);
-    int e = accumulate(v.begin(), v.begin() + n, 0);
+    int e = accumulate(v, v + n, 0);
     int ans = -1;
     while (s <= e)
     {
@@ -43,7 +49,9 @@ int findPages(vector<int> &v, int n, int m)
             e = mid - 1;
         }
         else
+        {
             s = mid + 1;
+        }
     }
     return ans;
 }
@@ -51,7 +59,7 @@ int findPages(vector<int> &v, int n, int m)
 int main()
 {
     // book allocation problem
-    vector<int> v = {12, 34, 67, 90};
+    int v[] = {12, 34, 67, 90};
     int n = 4; // no of books to be allocated
     int m = 2; // no of people
     cout << "minimum no of pages allocated to a person is : " << findPages(v, n, m) << endl;
