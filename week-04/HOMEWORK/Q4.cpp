@@ -1,56 +1,55 @@
-// book alocation problem
+// book allocation problem
 #include <iostream>
-#include <vector>
-#include <numeric> // used for accumulate stl function
+#include <numeric>
 using namespace std;
 
-bool possible(int v[], int n, int m, int sol)
+bool ispossible(int A[], int &N, int &M, int mid)
 {
-    int pageSum = 0;
-    int c = 1;
-    for (int i = 0; i < n; i++)
+    int pagesum = 0;
+    int counter = 1;
+    for (int i = 0; i < N; i++)
     {
-        if (v[i] > sol)
+        if (A[i] > mid)
         {
             return false;
         }
-        else if (pageSum + v[i] > sol)
+        else if (pagesum + A[i] > mid)
         {
-            c++;
-            pageSum += v[i];
-            if (c > m)
+            counter++;
+            pagesum = A[i];
+            if (counter > M)
             {
                 return false;
             }
         }
         else
         {
-            pageSum += v[i];
+            pagesum += A[i];
         }
     }
     return true;
 }
 
-int findPages(int v[], int n, int m)
+int findPages(int A[], int &N, int &M)
 {
-    if (m > n)
+    if (M > N)
     {
         return -1;
     }
-    int s = 0;
-    int e = accumulate(v, v + n, 0);
+    int start = 0;
+    int end = accumulate(A, A + N, 0);
     int ans = -1;
-    while (s <= e)
+    while (start <= end)
     {
-        int mid = (s + (e - s)) >> 1;
-        if (possible(v, n, m, mid))
+        int mid = (start + end) / 2;
+        if (ispossible(A, N, M, mid))
         {
             ans = mid;
-            e = mid - 1;
+            end = mid - 1;
         }
         else
         {
-            s = mid + 1;
+            start = mid + 1;
         }
     }
     return ans;
@@ -58,11 +57,10 @@ int findPages(int v[], int n, int m)
 
 int main()
 {
-    // book allocation problem
-    int v[] = {12, 34, 67, 90};
-    int n = 4; // no of books to be allocated
-    int m = 2; // no of people
-    cout << "minimum no of pages allocated to a person is : " << findPages(v, n, m) << endl;
-
+    int N = 4; // no of books
+    int M = 2; // no of students
+    int A[] = {12, 34, 67, 90};
+    int awq = findPages(A, N, M);
+    cout << "minimum no of pages: " << awq << endl;
     return 0;
 }
