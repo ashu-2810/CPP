@@ -31,8 +31,6 @@ bool isPossible(vector<int> &arr, int n, int k, long long int mid)
 
 long long int mintime(vector<int> &arr, int n, int k)
 {
-    if (k > n)
-        return -1;
     long long int start = 0;
     // long long end = 0;
     // for (int i = 0; i < n; i++)
